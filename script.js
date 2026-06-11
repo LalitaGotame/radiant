@@ -1,3 +1,5 @@
+
+
 const rules = {
     fullname: {
         required: true,
@@ -5,8 +7,8 @@ const rules = {
     },
     email: {
         required: true,
-        pattern: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
-        message: "Enter a valid email"
+        pattern: /^[^\s@]+@[^\s@]+\.com$/,
+    message: "Enter a valid email"
     },
     dob: {
         required: true,
@@ -37,7 +39,7 @@ const rules = {
     },
     password: {
         required: true,
-        pattern: /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$/,
+       pattern: /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d@$!%*?&]{6,}$/,
         message: "Password not strong enough"
     }
 };
@@ -62,7 +64,7 @@ document.querySelector("form").addEventListener("submit", function (e) {
     for (let key in rules) {
         let rule = rules[key];
 
-        // Gender - radio button, handled separately
+        
         if (key === "gender") {
             const checked = document.querySelector('input[name="gender"]:checked');
             if (!checked) {
@@ -74,7 +76,7 @@ document.querySelector("form").addEventListener("submit", function (e) {
             continue;
         }
 
-        // Role - radio button, handled separately
+        
         if (key === "role") {
             const checked = document.querySelector('input[name="role"]:checked');
             if (!checked) {
@@ -86,7 +88,7 @@ document.querySelector("form").addEventListener("submit", function (e) {
             continue;
         }
 
-        // Photo - file input, handled separately
+       
         if (key === "photo") {
             const photoInput = document.getElementById("photo");
             if (photoInput.files.length === 0) {
@@ -98,7 +100,7 @@ document.querySelector("form").addEventListener("submit", function (e) {
             continue;
         }
 
-        // All other fields
+        
         let input = document.getElementById(key);
         let value = input.value.trim();
 
@@ -117,16 +119,19 @@ document.querySelector("form").addEventListener("submit", function (e) {
         }
     }
 
-    // Confirm password check - outside the loop
+   
     const password = document.getElementById("password").value;
     const confirmPassword = document.getElementById("confirmPassword").value;
-
+    console.log("password:", password);
+    console.log("confirmPassword:", confirmPassword);
     if (password !== confirmPassword) {
         showError(document.getElementById("confirmPassword"), "Passwords do not match");
         hasError = true;
+    }else{
+        clearError(document.getElementById("confirmPassword"));
     }
 
-    // Final check - only submit if no errors
+    
     if (hasError) return;
 
     alert("Form submitted successfully!");
