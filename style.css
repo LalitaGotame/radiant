@@ -1,0 +1,131 @@
+body {
+    font-family: "Poppins", sans-serif;
+    overflow-x: hidden;
+    background: #f7f7f5;
+}
+
+/* Navbar */
+.navbar{
+    background: #f7f7f5 !important;
+}
+    
+
+
+.search-box {
+    width: 380px;
+    border-radius: 12px;
+   
+}
+
+/* Hero */
+
+.hero {
+    height: calc(100vh - 82px);
+    position: relative;
+
+    background-image: url("background.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.overlay {
+    position: absolute;
+    inset: 0;
+    backdrop-filter: blur(4px);
+}
+
+.left-panel {
+    background: #2f5d8a;
+    display: flex;
+    align-items: center;
+    z-index: 2;
+}
+
+.content {
+    padding: 60px;
+    color: white;
+}
+
+.content h1 {
+    font-size: 4rem;
+    font-weight: 700;
+}
+
+.content p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin-top: 25px;
+}
+
+.features {
+    margin-top: 40px;
+}
+
+.features div {
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+}
+
+.features i {
+    width: 35px;
+}
+
+.register-card {
+    width: 70%;
+    max-width: 700px;
+
+    background: #f7f7f5;
+    border-radius: 25px;
+
+    padding: 40px;
+
+    z-index: 2;
+
+    box-shadow:
+        0 15px 40px rgba(0,0,0,0.15);
+}
+
+.custom-input {
+    height: 60px;
+    border-radius: 15px;
+}
+
+.btn-primary {
+    background: #2f5d8a;
+    border-color: none;
+}
+
+.btn-primary:hover {
+    background: #264d73;
+}
+.text-decoration-none {
+    font-weight: 750;
+    color: #264d73;
+}
+.login-class{
+    background-color: #f7f7f5;
+    border-radius: 15px;
+    box-shadow: 5px 10px 10px rgba(0,0,0,0.15);
+} 
+
+.login-tabs{
+    background-color: #f7f7f5;
+    border-radius: 15px;
+    box-shadow: 5px 5px 5px  rgba(0.15,0.15,0.15,0.15);
+}
+.text-center{
+    background-color: #f7f7f5;
+}
+
+.google-icon {
+    color: #264d73;
+    font-size: 1.5rem;
+  
+}
+
+.btn.active-tab{
+    background-color: #264d73;
+    color: white;
+    border-radius: 12px;
+    
+}
