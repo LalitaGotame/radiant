@@ -131,7 +131,7 @@
                                         <input type="radio" name="gender"> Male
                                         <input type="radio" name="gender"> Female
                                         <input type="radio" name="gender"> Others
-                                    <div id="genderError" class="inavlid-feedback"></div>
+                                    <div id="genderError" class="text-danger"></div>
                                     </div>
 
                                 </div>
@@ -141,12 +141,9 @@
                                     <label class="mb-2" >Your Role</label>
 
                                     <div class="d-flex gap-4" id="role" >
-                                        <input type="radio"  name="role" value="student">
-                                        <label for="student">Student</label>
-                                        <input type="radio"  name="role" value="teacher">
-                                        <label for="teacher">Teacher</label>
-
-                                        <div id="roleError" class="invalid-feedback"></div>
+                                        <input type="radio"  name="role" >Student
+                                        <input type="radio"  name="role" >Teacher
+                                    <div id="roleError" class="text-danger" ></div>
                                     </div>
 
                                 </div>
@@ -179,6 +176,16 @@
                                </div>
 
                              <img id="imagePreview" class="img-thumbnail" style="max-width:300px; display:none;">
+                             <script>
+                                 document.getElementById('imageInput').addEventListener('change', function () {
+                                  const file = this.files[0];
+
+                                   if (file) {
+                                    document.getElementById('imagePreview').src = URL.createObjectURL(file);
+                                    document.getElementById('imagePreview').style.display = 'block';
+                                   }
+                                });
+                            </script>
 
 
                                 <div class="col-md-6 mb-3">

@@ -68,10 +68,10 @@ document.querySelector("form").addEventListener("submit", function (e) {
         if (key === "gender") {
             const checked = document.querySelector('input[name="gender"]:checked');
             if (!checked) {
-                document.getElementById("genderError").textContent = rule.message;
-                hasError = true;
+               document.getElementById("genderError").textContent=rule.message;
+               hasError=true;
             } else {
-                document.getElementById("genderError").textContent = "";
+                document.getElementById("genderError").textContent="";
             }
             continue;
         }
@@ -79,11 +79,11 @@ document.querySelector("form").addEventListener("submit", function (e) {
         
         if (key === "role") {
             const checked = document.querySelector('input[name="role"]:checked');
-            if (!checked) {
-                document.getElementById("roleError").textContent = rule.message;
-                hasError = true;
+           if (!checked) {
+              document.getElementById("roleError").textContent=rule.message;
+              hasError=true;
             } else {
-                document.getElementById("roleError").textContent = "";
+                document.getElementById("roleError").textContent="";
             }
             continue;
         }
@@ -99,6 +99,8 @@ document.querySelector("form").addEventListener("submit", function (e) {
             }
             continue;
         }
+        
+        
 
         
         let input = document.getElementById(key);
@@ -113,17 +115,17 @@ document.querySelector("form").addEventListener("submit", function (e) {
         }
 
         if (rule.pattern && !rule.pattern.test(value)) {
-            showError(input, rule.message); // ✅ Fixed: was rules.message
+            showError(input, rule.message); 
             hasError = true;
             continue;
         }
+        
     }
 
    
     const password = document.getElementById("password").value;
     const confirmPassword = document.getElementById("confirmPassword").value;
-    console.log("password:", password);
-    console.log("confirmPassword:", confirmPassword);
+    
     if (password !== confirmPassword) {
         showError(document.getElementById("confirmPassword"), "Passwords do not match");
         hasError = true;
@@ -136,3 +138,4 @@ document.querySelector("form").addEventListener("submit", function (e) {
 
     alert("Form submitted successfully!");
 });
+
