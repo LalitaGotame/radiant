@@ -12,7 +12,9 @@ const rules = {
     },
     dob: {
         required: true,
-        message: "Date of Birth required"
+        minAge:16,
+        message: "Date of Birth required",
+        minMessage:"You must be atleast 16 years old"
     },
     gender: {
         required: true,
@@ -44,6 +46,14 @@ const rules = {
     }
 };
 
+const today = new Date();
+const maxDate = new Date(today.getFullYear() - 16, today.getMonth(), today.getDate());
+const minDate = new Date(today.getFullYear() - 100, today.getMonth(), today.getDate());
+document.getElementById("dob").max = maxDate.toISOString().split("T")[0];
+document.getElementById("dob").min = minDate.toISOString().split("T")[0];
+
+
+
 document.querySelector("form").addEventListener("submit", function (e) {
     e.preventDefault();
 
@@ -63,6 +73,25 @@ document.querySelector("form").addEventListener("submit", function (e) {
 
     for (let key in rules) {
         let rule = rules[key];
+
+        if (key === "dob") {
+            const dobInput = document.getElementById("dob");
+            if (!dobInput.value) {
+                showError(dobInput, rule.message);
+                hasError = true;
+            } else {
+                const dobValue = new Date(dobInput.value);
+                const minAge = new Date();
+                minAge.setFullYear(minAge.getFullYear() - rule.minAge);
+                if (dobValue > minAge) {
+                    showError(dobInput, rule.minMessage);
+                    hasError = true;
+                } else {
+                    clearError(dobInput);
+                }
+            }
+            continue;
+        }
 
         
         if (key === "gender") {
