@@ -53,23 +53,26 @@ document.getElementById("dob").max = maxDate.toISOString().split("T")[0];
 document.getElementById("dob").min = minDate.toISOString().split("T")[0];
 
 
+ function showError(input, message) {
+    const box = input.closest(".field-box") || input.closest(".photo-box");
+    if (box) box.classList.add("is-invalid-box");
+    const errorDiv = document.getElementById(input.id + "Error");
+    if (errorDiv) errorDiv.textContent = message;
+}
+
+function clearError(input) {
+    const box = input.closest(".field-box") || input.closest(".photo-box");
+    if (box) box.classList.remove("is-invalid-box");
+    const errorDiv = document.getElementById(input.id + "Error");
+    if (errorDiv) errorDiv.textContent = "";
+}
 
 document.querySelector("form").addEventListener("submit", function (e) {
     e.preventDefault();
 
     let hasError = false;
 
-    function showError(input, message) {
-        const errorDiv = document.getElementById(input.id + "Error");
-        input.classList.add("is-invalid");
-        if (errorDiv) errorDiv.textContent = message;
-    }
-
-    function clearError(input) {
-        const errorDiv = document.getElementById(input.id + "Error");
-        input.classList.remove("is-invalid");
-        if (errorDiv) errorDiv.textContent = "";
-    }
+   
 
     for (let key in rules) {
         let rule = rules[key];
@@ -168,3 +171,28 @@ document.querySelector("form").addEventListener("submit", function (e) {
     alert("Form submitted successfully!");
 });
 
+document.getElementById("togglePassword").addEventListener("click",function(){
+    const pwd=document.getElementById("password");
+    if(pwd.type==="password"){
+        pwd.type="text";
+        this.classList.remove("fa-eye");
+        this.classList.add("fa-eye-slash");
+    }else{
+        pwd.type="password";
+        this.classList.remove("fa-eye-slash");
+        this.classList.add("fa-eye");
+    }
+});
+
+document.getElementById("toggleConfirmPassword").addEventListener("click", function () {
+    const pwd = document.getElementById("confirmPassword");
+    if (pwd.type === "password") {
+        pwd.type = "text";
+        this.classList.remove("fa-eye");
+        this.classList.add("fa-eye-slash");
+    } else {
+        pwd.type = "password";
+        this.classList.remove("fa-eye-slash");
+        this.classList.add("fa-eye");
+    }
+});

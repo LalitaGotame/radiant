@@ -71,45 +71,224 @@ body {
 .features i {
     width: 35px;
 }
-
-.register-card {
-    width: 70%;
-    max-width: 700px;
-
-    background: #f7f7f5;
-    border-radius: 25px;
-
-    padding: 40px;
-
+.right-panel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     z-index: 2;
-
-    box-shadow:
-        0 15px 40px rgba(0,0,0,0.15);
+    padding: 40px 20px;
+    overflow-y: auto;
 }
-
-.custom-input {
-    height: 60px;
-    border-radius: 15px;
+ 
+ .register-card {
+            background: #fff;
+            border-radius: 16px;
+            padding: 36px 40px;
+            width: 100%;
+            max-width: 680px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
 }
+ 
+        /* The outer box for each field */
+        .field-box {
+            border: 1.5px solid #d0d7e2;
+            border-radius: 12px;
+            padding: 10px 16px 10px 16px;
+            background: #fff;
+            position: relative;
+            min-height: 62px;
+        }
+ 
+        .field-box .field-label {
+            font-size: 13px;
+            font-weight: 600;
+            color: #222;
+            margin-bottom: 2px;
+            display: block;
+        }
+ 
+        .field-box .field-label .required {
+            color: red;
+            margin-left: 1px;
+        }
+ 
+        .field-box input[type="text"],
+        .field-box input[type="email"],
+        .field-box input[type="tel"],
+        .field-box input[type="date"],
+        .field-box input[type="password"] {
+            border: none;
+            outline: none;
+            padding: 0;
+            font-size: 13px;
+            color: #aab0bc;
+            background: transparent;
+            width: 100%;
+            box-shadow: none;
+        }
+ 
+        .field-box input[type="text"]:focus,
+        .field-box input[type="email"]:focus,
+        .field-box input[type="tel"]:focus,
+        .field-box input[type="date"]:focus,
+        .field-box input[type="password"]:focus {
+            outline: none;
+            box-shadow: none;
+            color: #333;
+        }
+ 
+        .field-box input::placeholder {
+            color: #aab0bc;
+            font-style: italic;
+            font-size: 13px;
+        }
+ 
+        .field-box.is-invalid-box {
+            border-color: #dc3545;
+        }
+ 
+        .invalid-msg {
+            font-size: 11px;
+            color: #dc3545;
+            margin-top: 4px;
+            display: block;
+        }
+ 
+        /* Radio group box */
+        .radio-field-box {
+            border: none;
+            padding: 0;
+            background: transparent;
+            color:#2e5e88;
+        }
+ 
+        .radio-field-box .field-label {
+            font-size: 13px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 8px;
+            display: block;
+        }
+ 
+        .radio-field-box .field-label .required {
+            color: red;
+        }
+ 
+        .radio-options {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            color:#333;
+        }
+ 
+        .radio-options label {
+            font-size: 14px;
+            color: #333;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            cursor: pointer;
+            margin: 0;
+        }
+ 
+        .radio-options input[type="radio"] {
+            accent-color: #2e5e88;
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+        }
+ 
+        /* Photo box */
+        .photo-box {
+            border: 1.5px solid #d0d7e2;
+            border-radius: 12px;
+            padding: 10px 16px;
+            background: #fff;
+            position: relative;
+            min-height: 62px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+ 
+        .photo-box .field-label {
+            font-size: 13px;
+            font-weight: 600;
+            color: #222;
+            margin-bottom: 2px;
+        }
+ 
+        .photo-box .photo-placeholder {
+            font-size: 13px;
+            color: #aab0bc;
+            font-style: italic;
+        }
+ 
+        .photo-box input[type="file"] {
+            position: absolute;
+            inset: 0;
+            opacity: 0;
+            cursor: pointer;
+            width: 100%;
+            height: 100%;
+        }
+ 
+        .photo-box .clip-icon {
+            position: absolute;
+            right: 16px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #2d6a9f;
+            font-size: 16px;
+        }
+ 
+        /* Password eye */
+        .eye-icon {
+            position: absolute;
+            right: 14px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            color: #aab0bc;
+            font-size: 15px;
+            z-index:10;
+        }
+ 
+        /* Register button */
+        .btn-register {
+            background: #2d6a9f;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            padding: 11px 52px;
+            font-size: 15px;
+            font-weight: 600;
+            transition: background 0.2s;
+        }
+ 
+        .btn-register:hover {
+            background: #1a5080;
+            color: white;
+        }
+ 
+        .logo-brand {
+            font-size: 12px;
+            font-weight: 700;
+            color: #1a3a5c;
+            letter-spacing: 1px;
+            line-height: 1.3;
+        }
+ 
+        .logo-tagline {
+            font-size: 10px;
+            color: #e6a817;
+            font-style: italic;
+        }
 
-.btn-primary {
-    background: #2f5d8a;
-    border-color: none;
-}
 
-.btn-primary:hover {
-    background: #264d73;
-}
-.text-decoration-none {
-    font-weight: 750;
-    color: #264d73;
-}
-.login-class{
-    background-color: #f7f7f5;
-    border-radius: 15px;
-    box-shadow: 5px 10px 10px rgba(0,0,0,0.15);
-} 
-
+        .is-invalid-box{
+            border-color: #dc3545 !important;
+        }
 .login-tabs{
     background-color: #f7f7f5;
     border-radius: 15px;
