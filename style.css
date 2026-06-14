@@ -100,7 +100,7 @@ body {
         }
  
         .field-box .field-label {
-            font-size: 13px;
+            font-size: 10px;
             font-weight: 600;
             color: #222;
             margin-bottom: 2px;
@@ -120,7 +120,8 @@ body {
             border: none;
             outline: none;
             padding: 0;
-            font-size: 13px;
+            font-family:"Poppins",sans-serif;
+            font-size: 10px;
             color: #aab0bc;
             background: transparent;
             width: 100%;
@@ -140,7 +141,7 @@ body {
         .field-box input::placeholder {
             color: #aab0bc;
             font-style: italic;
-            font-size: 13px;
+            font-size: 10px;
         }
  
         .field-box.is-invalid-box {
@@ -148,7 +149,7 @@ body {
         }
  
         .invalid-msg {
-            font-size: 11px;
+            font-size: 10px;
             color: #dc3545;
             margin-top: 4px;
             display: block;
@@ -163,7 +164,7 @@ body {
         }
  
         .radio-field-box .field-label {
-            font-size: 13px;
+            font-size: 12px;
             font-weight: 600;
             color: #333;
             margin-bottom: 8px;
@@ -182,7 +183,7 @@ body {
         }
  
         .radio-options label {
-            font-size: 14px;
+            font-size: 12px;
             color: #333;
             display: flex;
             align-items: center;
@@ -212,14 +213,14 @@ body {
         }
  
         .photo-box .field-label {
-            font-size: 13px;
+            font-size: 10px;
             font-weight: 600;
             color: #222;
             margin-bottom: 2px;
         }
  
         .photo-box .photo-placeholder {
-            font-size: 13px;
+            font-size: 10px;
             color: #aab0bc;
             font-style: italic;
         }
@@ -261,7 +262,7 @@ body {
             border: none;
             border-radius: 8px;
             padding: 11px 52px;
-            font-size: 15px;
+            font-size: 10px;
             font-weight: 600;
             transition: background 0.2s;
         }
