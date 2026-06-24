@@ -88,6 +88,15 @@ body {
             max-width: 680px;
             box-shadow: 0 20px 60px rgba(0,0,0,0.3);
 }
+.login-card {
+            background: #f7f7f5;
+            border-radius: 16px;
+            padding: 36px 40px;
+            width: 449 px;
+            max-width: 680px;
+            height: 611px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+}
  
         /* The outer box for each field */
         .field-box {
@@ -265,6 +274,8 @@ body {
             font-size: 10px;
             font-weight: 600;
             transition: background 0.2s;
+            width: 119px;
+            height: 44px;
         }
  
         .btn-register:hover {
@@ -290,24 +301,112 @@ body {
         .is-invalid-box{
             border-color: #dc3545 !important;
         }
-.login-tabs{
-    background-color: #f7f7f5;
-    border-radius: 15px;
-    box-shadow: 5px 5px 5px  rgba(0.15,0.15,0.15,0.15);
+
+
+        .login-class{
+            border: 1.5px;
+        }
+
+
+/* ─── ADD THESE RULES TO THE BOTTOM OF YOUR style.css ─── */
+
+/* Login page body — plain light background, no hero image */
+body.login-page {
+    background: #f7f7f5;
+    min-height: 100vh;
 }
-.text-center{
-    background-color: #f7f7f5;
+
+/* Login card — centred, fixed comfortable width */
+.login-card {
+    background: #ffffff;
+    border-radius: 20px;
+    width: 100%;
+    max-width: 480px;
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.12);
+}
+
+/* Tab strip */
+.login-tabs {
+    background-color: #f0f3f7;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 56px;
+    box-shadow: none;   /* override old inset shadow */
+}
+
+.login-tabs .btn {
+    flex: 1;
+    height: 46px;
+    font-size: 15px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    border-radius: 12px;
+    transition: background 0.2s, color 0.2s;
+    color: #555;
+}
+
+.login-tabs .btn.active-tab {
+    background-color: #264d73;
+    color: #ffffff;
+    width: auto;        /* let flex handle width */
+}
+
+.login-tabs .btn.inactive {
+    background: transparent;
+    color: #555;
+    width: auto;
+}
+
+/* Field boxes on login page inherit .field-box from style.css —
+   only override font size to be slightly larger for readability */
+.login-card .field-box input[type="email"],
+.login-card .field-box input[type="password"] {
+    font-size: 13px;
+}
+
+.login-card .field-box .field-label {
+    font-size: 11px;
+}
+
+.login-card .field-box input::placeholder {
+    font-size: 13px;
+}
+
+/* Login submit button */
+.btn-login {
+    background: #264d73;
+    color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    padding: 12px 0;
+    width: 180px;
+    font-size: 16px;
+    font-weight: 500;
+    font-family: 'Poppins', sans-serif;
+    transition: background 0.2s;
+}
+
+.btn-login:hover {
+    background: #1a3a5c;
+    color: #ffffff;
+}
+
+/* Google button */
+.google-btn {
+    background: transparent;
+    border: none;
+    padding: 0;
+    line-height: 1;
 }
 
 .google-icon {
+    font-size: 2rem;
     color: #264d73;
-    font-size: 1.5rem;
-  
 }
 
-.btn.active-tab{
-    background-color: #264d73;
-    color: white;
-    border-radius: 12px;
-    
+/* Ensure text-center areas in login card have no background colour bleed */
+.login-card .text-center {
+    background-color: transparent;
 }
