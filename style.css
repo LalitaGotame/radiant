@@ -10,6 +10,24 @@ body {
 .navbar{
     background: #f7f7f5 !important;
 }
+
+.navswitch a{
+    text-decoration: none;
+    padding: 10px 25px;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.activetab{
+    background-color: #2f5d8a;
+    color: white;
+}
+
+.inactive{
+    background-color: transparent;
+    color: #2f5d8a;
+    border: 1px solid #2f5d8a;
+}
     
 
 
